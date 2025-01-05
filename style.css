@@ -1,0 +1,565 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --red: #af0020;
+  --shadow: #de002c;
+  --black: #270b0c;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* .screen-game {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+} */
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nintendo-ds {
+  width: 414px;
+  height: 431px;
+  position: absolute;
+}
+
+.top-screen {
+  position: absolute;
+  width: 100%;
+  height: 46.5%;
+  border-radius: 15px 15px 5px 5px;
+  background: var(--red);
+  box-shadow: inset 10px 10px 12px -2px var(--shadow),
+    inset -2px 5px 3px 1px var(--shadow), inset -5px 5px 5px 2px white,
+    0px -1px 2px 2px #a90000;
+}
+
+.screen {
+  position: absolute;
+  width: 51.5%;
+  height: 83.5%;
+  border-radius: 3px;
+  top: 9.5%;
+  left: 24%;
+  box-shadow: 0px 0px 3px 0px #6f323f;
+}
+
+.screen-content {
+  position: absolute;
+  content: "";
+  width: 91%;
+  height: 87%;
+  border: 1px solid grey;
+  box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.5);
+  left: 4%;
+  top: 6%;
+  background: rgb(73, 73, 73);
+  background: linear-gradient(
+    323deg,
+    rgba(73, 73, 73, 1) 42%,
+    rgba(245, 243, 245, 1) 85%
+  );
+}
+
+.screen-game {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.speaker-hole {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #270b0c;
+  border-radius: 2.5px;
+}
+
+.speaker-hole::after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 5px;
+  border-radius: 2.5px;
+  background: #270b0c;
+  left: 16px;
+}
+
+.speaker-hole::before {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 5px;
+  border-radius: 2.5px;
+  background: #270b0c;
+  left: 31px;
+}
+
+#sh1 {
+  left: 30px;
+  top: 94px;
+}
+
+#sh2 {
+  left: 30px;
+  top: 110px;
+}
+
+#sh3 {
+  left: 346px;
+  top: 95px;
+}
+
+#sh4 {
+  left: 346px;
+  top: 110px;
+}
+
+.hinge {
+  position: absolute;
+  width: 99.5%;
+  top: 46.5%;
+  height: 28px;
+  border-radius: 25px;
+  z-index: 3;
+  background: rgb(218, 19, 19);
+  background: linear-gradient(
+    0deg,
+    rgb(104 25 25) 0%,
+    rgb(202 51 51) 10%,
+    rgb(175 0 32) 65%,
+    rgb(158 6 6) 100%
+  );
+  box-shadow: 0px 5px 10px -1px #681616;
+}
+
+.hinge::after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #dc1010;
+  left: 49px;
+}
+
+.hinge::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #eb4444;
+  left: 364px;
+}
+
+.mic {
+  position: absolute;
+  width: 4px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--black);
+  left: 49.5%;
+  top: 8px;
+}
+
+.light {
+  position: absolute;
+  height: 67%;
+  width: 4px;
+  top: 12%;
+  border-radius: 10px;
+  right: 25px;
+  background: rgb(106, 87, 82);
+  background: linear-gradient(
+    0deg,
+    rgba(106, 87, 82, 1) 0%,
+    rgba(205, 186, 186, 1) 65%,
+    rgba(106, 87, 82, 1) 100%
+  );
+}
+
+.light::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  top: 0;
+  border-radius: 10px;
+  left: 8px;
+  background: rgb(92, 107, 73);
+  background: linear-gradient(
+    0deg,
+    rgba(92, 107, 73, 1) 0%,
+    rgba(211, 212, 183, 1) 65%,
+    rgba(123, 142, 98, 1) 100%
+  );
+}
+
+.bottom-screen {
+  position: absolute;
+  width: 99.5%;
+  height: 50%;
+  bottom: 0;
+  border-radius: 3px 3px 14px 14px;
+  background: var(--red);
+  box-shadow: 0px 1px 2px 2px #720000;
+}
+
+.bottom-screen .screen {
+  top: 24px;
+  height: 168px;
+  width: 52%;
+  background: var(--red);
+  z-index: 1;
+}
+
+.bottom-screen .screen::after {
+  background: rgb(73, 73, 73);
+  background: linear-gradient(
+    140deg,
+    rgba(73, 73, 73, 1) 42%,
+    rgba(245, 243, 245, 1) 85%
+  );
+}
+
+.bottom-screen .screen::before {
+  content: "";
+  position: absolute;
+  width: 102%;
+  height: 109%;
+  left: -1%;
+  top: -7%;
+  background: #af0020;
+  z-index: -1;
+  border-radius: 5px;
+  box-shadow: 10px 7px 10px 3px #b41d1d, -6px 4px 5px 2px var(--red),
+    -12px 4px 8px 3px #d64c4c;
+}
+
+.d-pad {
+  position: absolute;
+  width: 18px;
+  height: 54px;
+  background: var(--red);
+  border-radius: 3px;
+  left: 34px;
+  top: 61px;
+  border: 2px solid #971818;
+}
+
+.d-pad::before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 54px;
+  background: var(--red);
+  border-radius: 3px;
+  border: 2px solid #971818;
+  transform: rotate(90deg);
+  top: -2px;
+  left: -2px;
+}
+
+.d-pad::after {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 54px;
+  background: var(--red);
+  border-radius: 3px;
+  top: 0px;
+  left: 0px;
+}
+
+.d-pad-marker {
+  position: absolute;
+  width: 2px;
+  height: 11px;
+  background: #ffe3e4;
+  z-index: 5;
+}
+
+#dpm1 {
+  left: 8px;
+  top: 6px;
+}
+
+#dpm2 {
+  left: 8px;
+  top: 38px;
+}
+
+#dpm3 {
+  left: 25px;
+  top: 22px;
+  transform: rotate(90deg);
+}
+
+#dpm4 {
+  left: -8px;
+  top: 22px;
+  transform: rotate(90deg);
+}
+
+.button {
+  position: absolute;
+  width: 21px;
+  height: 18px;
+  padding-top: 3px;
+  border: 1px solid #a43047;
+  border-radius: 50%;
+  z-index: 5;
+  font-size: 0.7rem;
+  font-weight: 400;
+  background: #b20019;
+  color: #fff7f9;
+  box-shadow: 3px 2px 3px -2px #5c232e, inset 2px 2px 3px -1px #dd5555;
+}
+
+#X {
+  right: 35px;
+  top: 45px;
+}
+
+#A {
+  right: 12px;
+  top: 69px;
+}
+
+#Y {
+  right: 59px;
+  top: 69px;
+}
+
+#B {
+  right: 35px;
+  top: 92px;
+}
+
+.small-button {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #46000d;
+  border-radius: 50%;
+  bottom: 53px;
+  right: 70px;
+  box-shadow: 2px 2px 3px -2px #000000;
+  cursor: pointer;
+}
+
+#select {
+  bottom: 29px;
+  right: 70px;
+}
+
+#power-button {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+}
+
+#power-button::after {
+  position: absolute;
+  content: "POWER";
+  font-size: 7px;
+  color: #fff7f9;
+  left: 20px;
+  top: 2px;
+}
+
+#select::after {
+  position: absolute;
+  content: "SELECT";
+  font-size: 7px;
+  color: #fff7f9;
+  left: 20px;
+  top: 2px;
+}
+
+button {
+  position: absolute;
+  top: 6%;
+  padding: 6px 15px;
+  background: #93e8f5;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.pink {
+  background: var(--red);
+}
+
+.start-screen {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 5px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #ea6e4a;
+  padding: 5px;
+  text-decoration: underline;
+}
+
+.start-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.start-option {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.start-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #05a0c0;
+  color: #fff;
+  margin-right: 10px;
+}
+
+#game-version {
+  align-self: flex-start;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+.game-screen {
+  font-family: "Pixelify Sans", serif;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.game-statistics {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  font-size: 8px;
+}
+
+.player-score,
+.computer-score {
+  background-color: #05a0c0;
+  padding: 5px;
+  color: #fff;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.game-players {
+  display: flex;
+  align-items: center;
+}
+
+.game-choice {
+  flex: 2;
+}
+
+.game-versus {
+  flex: 1;
+}
+
+.game-result {
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
+}
+
+.result-player,
+.result-computer {
+  font-size: 15px;
+  background-color: #05a0c0;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+
+/* ANIMATION TURN ON DEVICE */
+.blink {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    background: #7a7e7d;
+  }
+  100% {
+    background: rgb(255, 238, 0);
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    background: #7a7e7d;
+  }
+  100% {
+    background: rgb(255, 238, 0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    background: #7a7e7d;
+  }
+  100% {
+    background: rgb(255, 238, 0);
+  }
+}
