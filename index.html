@@ -33,7 +33,7 @@
           <div class="screen-content">
             <div id="screen-game" class="screen-game">
 
-              <div class="start-screen">
+              <div id="start-screen" class="start-screen">
                 <h1 class="start-title">Rock Paper Scissors</h1>
                 <ul class="start-list">
                   <li class="start-option">
@@ -49,15 +49,15 @@
                 <div id="game-version">version 1.0</div>
               </div>
   
-              <div class="game-screen">
+              <div id="game-screen" class="game-screen">
                 <div class="game-statistics">
-                  <div class="player-score">Player Score: <span>3</span></div>
-                  <div class="computer-score">Computer Score: <span>1</span></div>
+                  <div class="player-score">Player Score: <span id="player-score">0</span></div>
+                  <div class="computer-score">Computer Score: <span id="computer-score">0</span></div>
                 </div>
   
                 <div class="game-players">
                   <div class="player-choice game-choice">
-                    <img src="./images/rock.png" alt="">
+                    <img src="./images/unknow-choice.png" alt="">
                   </div>
   
                   <div class="game-versus">
@@ -65,7 +65,7 @@
                   </div>
   
                   <div class="computer-choice game-choice">
-                    <img src="./images/sissors.png" alt="">
+                    <img src="./images/unknow-choice.png" alt="">
                   </div>
                 </div>
   
@@ -90,7 +90,28 @@
       <div class="bottom-screen">
         <div class="screen">
           <div class="screen-content">
-            <div class="screen-game"></div>
+            <div class="screen-game">
+
+
+                <div id="bottom-screen-choice" class="bottom-screen-choice">
+                  <p class="screen-title-choice">Select your choice:</p>
+                  <div class="screen-all-choices">
+                    <div class="choices">
+                      <img src="./images/paper.png" alt="" />
+                      <span class="choices-button choice-y">Y</span>
+                    </div>
+                    <div class="choices">
+                      <img src="./images/rock.png" alt="" />
+                      <span class="choices-button choice-x">X</span>
+                    </div>
+                    <div class="choices">
+                      <img src="./images/sissors.png" alt="" />
+                      <span class="choices-button choice-a">A</span>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
           </div>
         </div>
         <div class="d-pad">

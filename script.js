@@ -1,20 +1,28 @@
 const powerButton = document.querySelector("#power-button");
-const gameScreen = document.querySelector("#screen-game");
+const startScreen = document.querySelector("#start-screen");
+const gameScreen = document.querySelector("#game-screen");
+const bottomScreenChoice = document.querySelector("#bottom-screen-choice");
 const buttons = document.querySelectorAll(".button");
 
 let nitendoOn = false;
-let startScreen = false;
+let startScreenOn = false;
+let gameScreenOn = false;
+let bottomScreenChoiceOn = false;
 
 function turnOn() {
   powerButton.addEventListener("click", (e) => {
     if (nitendoOn === true) {
+      startScreen.style.display = "none";
       gameScreen.style.display = "none";
+      bottomScreenChoice.style.display = "none";
       nitendoOn = false;
-      startScreen = false;
+      startScreenOn = false;
+      gameScreenOn = false;
+      bottomScreenChoiceOn = false;
     } else {
-      gameScreen.style.display = "block";
+      startScreen.style.display = "flex";
       nitendoOn = true;
-      startScreen = true;
+      startScreenOn = true;
     }
   });
 }
@@ -22,8 +30,15 @@ function turnOn() {
 function selectGameOption() {
   buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
-      if (startScreen === true) {
-        console.log(e.target);
+      if (startScreenOn) {
+        if (button.textContent === "Y") {
+          startScreen.style.display = "none";
+          gameScreen.style.display = "flex";
+          bottomScreenChoice.style.display = "flex";
+          startScreenOn = false;
+          gameScreenOn = true;
+          bottomScreenChoiceOn = true;
+        }
       }
     });
   });
@@ -45,13 +60,25 @@ function getComputerChoice() {
   }
 }
 
+let playerChoice = "";
+
 function getHumanChoice() {
-  let humanChoice = prompt('Choose between: "Rock, Paper and Scissors"');
-  return humanChoice;
+  buttons.forEach(button => {
+    button.addEventListener("click", (e) => {
+      if (bottomScreenChoiceOn) {
+        switch (button.textContent) {
+          case "Y":
+          console.log("Voce apertou o Y");
+          break;
+        }
+      }
+    })
+  })
+  
 }
 
 function playGame() {
-  let humanScore = 0;
+  let playerScore = 0;
   let computerScore = 0;
 
   function playRound(humanChoice, computerChoice) {
@@ -62,7 +89,7 @@ function playGame() {
       (humanChoice === "rock" && computerChoice === "scissors") ||
       (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-      humanScore += 1;
+      playerScore += 1;
       return alert(`You Win! ${humanChoice} beats ${computerChoice}.`);
     } else if (
       (humanChoice === "rock" && computerChoice === "paper") ||

@@ -80,10 +80,10 @@ img {
 }
 
 .screen-game {
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
 }
 
 .speaker-hole {
@@ -332,6 +332,7 @@ img {
   background: #b20019;
   color: #fff7f9;
   box-shadow: 3px 2px 3px -2px #5c232e, inset 2px 2px 3px -1px #dd5555;
+  cursor: pointer;
 }
 
 #X {
@@ -420,17 +421,19 @@ button {
   background-color: #fff;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   text-align: center;
-  padding: 5px;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: #ea6e4a;
   padding: 5px;
-  text-decoration: underline;
+}
+
+.start-title {
+  font-size: 16px;
+  color: #ea6e4a;
+  text-transform: uppercase;
 }
 
 .start-list {
@@ -460,7 +463,7 @@ button {
 
 #game-version {
   align-self: flex-start;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 
@@ -474,7 +477,7 @@ button {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
@@ -507,6 +510,9 @@ button {
 
 .game-choice {
   flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-versus {
@@ -517,6 +523,7 @@ button {
   justify-self: center;
   align-self: center;
   font-size: 20px;
+  opacity: 0;
 }
 
 .result-player,
@@ -526,6 +533,75 @@ button {
   color: #fff;
   padding: 5px;
   border-radius: 10px;
+}
+
+
+
+.bottom-screen-choice {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  box-sizing: border-box;
+  display: none;
+}
+
+.screen-title-choice{
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.screen-all-choices {
+  display: flex;
+}
+
+.buttons-screen {
+  width: 100%;
+  height: 100%;
+}
+
+.game-buttons {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.choices {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.choices-button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  border: 2px solid #3e0707;
+  font-weight: bold;
+}
+
+.choice-y {
+  background-color: #43be85;
+}
+
+.choice-x {
+  background-color: #d4b95e;
+}
+
+.choice-a {
+  background-color: #6fa8eb;
 }
 
 
